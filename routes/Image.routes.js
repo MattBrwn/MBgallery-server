@@ -9,6 +9,7 @@ let ImageModel = require('../models/Image.model')
 router.get('/album', (req, res) => {
      ImageModel.find()
           .then((album) => {
+               console.log(album)
                res.status(200).json(album)
           })
           .catch((err) => {
@@ -52,11 +53,26 @@ router.get('/album/:imageId', (req, res) => {
 })
 
 
+// will handle all DELETE requests to http:localhost:5005/api/todos/:id
+router.delete('/album/:id', (req, res) => {
+     ImageModel.findByIdAndDelete(req.params.id)
+           .then((response) => {
+                res.status(200).json(response)
+           })
+           .catch((err) => {
+                res.status(500).json({
+                     error: 'Something went wrong',
+                     message: err
+                })
+           })  
+ })
+ 
+
 // will handle all PATCH requests to http:localhost:5005/api/album/:id
-router.patch('/album/:id', (req, res) => {
-    let id = req.params.id
-    const {title, genre, description, imageUrl, price} = req.body;
-    ImageModel.findByIdAndUpdate(id, {$set: {title: title, gere: genre, description: description, imgaUrl: imageUrl, price: price}}, {new: true})
+router.patch('/album/:imageId', (req, res) => {
+    let imageId = req.params.imageId
+    const {title, genre, description, price} = req.body;
+    ImageModel.findByIdAndUpdate(imageId, {$set: {title: title, gere: genre, description: description, price: price}}, {new: true})
           .then((response) => {
                res.status(200).json(response)
           })

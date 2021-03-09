@@ -2,7 +2,6 @@ const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const PurchaseSchema = new Schema({
-  quantity: Number,
   buyer_id: {
     type: Schema.Types.ObjectId, ref: 'user'
     },
@@ -13,6 +12,6 @@ const PurchaseSchema = new Schema({
   date: Date
 });
 
-const PurchaseModel = model("Purchase", userSchema);
+const PurchaseModel = model("purchase", PurchaseSchema);
 
 module.exports = PurchaseModel;

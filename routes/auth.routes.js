@@ -66,35 +66,6 @@ router.post('/logout', (req, res) => {
   res.status(204).json({});
 })
 
-// router.post('/uploadform', (req, res) => {  
-//   const {title, genre, description, price, imageUrl} = req.body;
-//   console.log(req.body)
-//   ImageModel.create({title: title, genre: genre, description: description, price: price, imageUrl: imageUrl})
-//         .then((response) => {
-//              res.status(200).json(response)
-//         })
-//         .catch((err) => {
-//              res.status(500).json({
-//                   error: 'Something went wrong',
-//                   message: err
-//              })
-//         })  
-// })
-
-router.get('/album/', (req, res) => {
-  ImageModel.findById(req.params.ImageId)
-   .then((response) => {
-        res.status(200).json(response)
-   })
-   .catch((err) => {
-        res.status(500).json({
-             error: 'Something went wrong',
-             message: err
-        })
-   }) 
-})
-
-
 
 UserModel.findOne({email})
     .then((userData) => {

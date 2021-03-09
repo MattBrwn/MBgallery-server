@@ -11,7 +11,7 @@ const ImageSchema = new Schema({
   },
   genre: {
     type: String,
-    enum: ['Landscape', 'People', 'Nature', 'Black and White', 'Available Light', 'Details'],
+    enum: ['Landscape', 'People', 'Nature', 'Black and White', 'Available Light', 'Details', 'Cats'],
     required: true
   },
   

@@ -47,6 +47,9 @@ app.use("/api", authRoutes);
 const imageRoutes = require("./routes/image.routes");
 app.use("/api", imageRoutes);
 
+const purchaseRoutes = require("./routes/purchase.routes");
+app.use("/api", purchaseRoutes);
+
 const cloudinaryRoutes = require("./routes/cloudinary.routes");
 app.use("/api", cloudinaryRoutes);
 
