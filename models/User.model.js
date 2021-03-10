@@ -12,7 +12,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  is_admin: Boolean
+  isOwner: Boolean,
 });
 
 const UserModel = model("user", userSchema);

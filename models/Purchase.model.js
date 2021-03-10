@@ -12,6 +12,6 @@ const PurchaseSchema = new Schema({
   date: Date
 });
 
-const PurchaseModel = model("purchase", PurchaseSchema);
+const PurchaseModel = model("Purchase", PurchaseSchema);
 
 module.exports = PurchaseModel;

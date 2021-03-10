@@ -8,14 +8,13 @@ let UserModel = require('../models/User.model')
 
 router.get('/purchase', (req, res) => {
   // req.session.LoggedInUser._id is the unique id of the user
-  let user = req.session.loggedInUser
-  PurchaseModel.find({buyer_id: user._id})
+  PurchaseModel.find({buyer_id: req.session.loggedInUser._id})
     .populate("image_id")
         .then((response) => {
              res.status(200).json(response)
         })
         .catch((err) => {
-             //console.log(err)
+             console.log(err)
              res.status(500).json({
                   error: 'Something went wrong',
                   message: err
