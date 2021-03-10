@@ -53,7 +53,7 @@ app.use('/api', allRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/api", authRoutes);
 
-const imageRoutes = require("./routes/image.routes");
+const imageRoutes = require("./routes/Image.routes");
 app.use("/api", imageRoutes);
 
 const purchaseRoutes = require("./routes/purchase.routes");
