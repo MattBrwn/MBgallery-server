@@ -126,6 +126,22 @@ else {
 };
 };
 
+// middleware to check if user is Admin
+const is_admin = (req, res, next) => {  
+  if (req.session.is_admin) {
+      //calls whatever is to be executed after the isLoggedIn function is over
+      next()
+  }
+  else {
+      res.status(402).json({
+          message: 'User is not Admin',
+          code: 402,
+      })
+  };
+  };
+
+
+
 
 // THIS IS A PROTECTED ROUTE
 // will handle all get requests to http:localhost:5005/api/user

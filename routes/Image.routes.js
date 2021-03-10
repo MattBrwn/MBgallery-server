@@ -40,7 +40,7 @@ router.post('/create', (req, res) => {
 // will handle all GET requests to http:localhost:5005/api/album/:imageId
 //PS: Don't type :imageId , it's something dynamic, 
 router.get('/album/:imageId', (req, res) => {
-    ImageModel.findById(req.params.imageId)
+       ImageModel.findById(req.params.imageId)
      .then((response) => {
           res.status(200).json(response)
      })

@@ -11,7 +11,8 @@ const userSchema = new Schema({
   passwordHash: {
     type: String,
     required: true
-  }
+  },
+  is_admin: Boolean
 });
 
 const UserModel = model("user", userSchema);
